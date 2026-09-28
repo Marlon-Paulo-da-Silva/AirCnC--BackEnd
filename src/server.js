@@ -14,7 +14,7 @@ const server = http.Server(app);
 const io = socketio(server);
 
 
-    mongoose.connect('mongodb+srv://marlon:marlon@marlonomnistack-sr0dh.mongodb.net/semana09?retryWrites=true&w=majority', {
+    mongoose.connect(process.env.MONGO_URL || "mongodb://localhost:27017/semana09", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 
